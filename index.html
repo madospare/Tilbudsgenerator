@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tilbudsgenerator</title>
+</head>
+<body>
+    
+    <h1>Tilbudsgenerator</h1>
+
+    <form id="form">
+        <label for="kunde">Til:</label>
+        <input type="text" name="kunde">
+        <br>
+        <br>
+        <label for="support">Fra:</label>
+        <input type="text" name="support">
+        <br>
+        <br>
+        <table>
+            <tr>
+                <th>Produkt</th>
+                <th>Månedspris</th>
+                <th>Velg tilbud</th>
+            </tr>
+            <tr>
+                <td>Internett 50mbit</td>
+                <td>399,00 kr</td>
+                <td><input type="radio" name="internett" value="Internett 50mbit" checked></td>
+            </tr>
+            <tr>
+                <td>Internett 100mbit</td>
+                <td>599,00 kr</td>
+                <td><input type="radio" name="internett" value="Internett 100mbit"></td>
+            </tr>
+            <tr>
+                <td>Internett 300mbit</td>
+                <td>799,00 kr</td>
+                <td><input type="radio" name="internett" value="Internett 300mbit"></td>
+            </tr>
+            <tr>
+                <td>Internett 500mbit</td>
+                <td>999,00 kr</td>
+                <td><input type="radio" name="internett" value="Internett 500mbit"></td>
+            </tr>
+            <tr>
+                <th>Tilbehør</th>
+                <th>Engangspris</th>
+                <th>Velg tilbud</th>
+            </tr>
+            <tr>
+                <td>Ekstra TV-dekoder</td>
+                <td>399,00 kr</td>
+                <td><input type="checkbox" name="ekstra" value="Ekstra TV-decoder"></td>
+            </tr>
+            <tr>
+                <td>Wifi-extender</td>
+                <td>499,00 kr</td>
+                <td><input type="checkbox" name="ekstra" value="Wifi-extender"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Ferdig">
+        <br>
+        <br>
+        <textarea rows="10" cols="90" id="output" disabled>Tilbudene du har valgt vises her.</textarea>
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
