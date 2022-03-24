@@ -5,6 +5,7 @@ var output = document.getElementById("output");
 form.addEventListener("submit", function(event) 
 {
 
+    // Henter inn alle elementene i form
     var data = form.elements;
     var kunde = data.kunde.value;
     var support = data.support.value;
@@ -12,12 +13,13 @@ form.addEventListener("submit", function(event)
     var ekstra = data.ekstra;
     var pris = [399.00, 599.00, 799.00, 999.00];
     var ekstraPris = [399.00, 499.00];
+    var rabatt = data.rabatt.value;
 
+    // Tomme arrays som skal inneholde brukervalg, en variabel for totalpris og rabatt
     var alleTilbud = [];
     var allePriser = [];
-    var total1;
-    var total2;
-    var rabatt = 0;
+    var total = 0;
+    var avslag = 0;
 
     function LeggTilPris() 
     {
@@ -29,7 +31,7 @@ form.addEventListener("submit", function(event)
             {
                 alleTilbud.push(internett[i].value)
                 allePriser.push(pris[i]);
-                total1 += pris[i];
+                total += pris[i];
             }
         }
 
@@ -40,20 +42,21 @@ form.addEventListener("submit", function(event)
             {
                 alleTilbud.push(ekstra[i].value);
                 allePriser.push(ekstraPris[i]);
-                total2 = ekstraPris[i];
+                total += ekstraPris[i];
             }
         }
+
+        avslag = parseInt(total * rabatt/100);
 
     }
 
     LeggTilPris();
 
-    console.log(ekstra.value);
-
+    // Output
     output.innerHTML = "Hei " + kunde + " og takk for en hyggelig telefonsamtale." + '\n' + '\n'
     + "Bestilling: " + alleTilbud + " " + allePriser + " kr" + '\n'
-    + "Rabatt: " + rabatt + '\n'
-    + "Total: " + total1 + " kr" + total2 + " kr" + '\n' + '\n'
+    + "Rabatt: " + rabatt + "%" + '\n'
+    + "Total: " + (total - avslag) + " kr" + '\n' + '\n'
     + "Det er bare å svare på denne eposten hvis du har noen spørsmål." + '\n' + '\n'
     + "MVH " + support;
 
@@ -61,3 +64,6 @@ form.addEventListener("submit", function(event)
     event.preventDefault();
 
 });
+
+//var PriceDiscountMonthly = parseInt(TotalPrice1 * DiscountMonthlyEl.value/100)
+//var PriceDiscountOneTime = parseInt(TotalPrice2 * DiscountEl.value/100)
