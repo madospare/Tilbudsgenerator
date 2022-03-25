@@ -40,8 +40,8 @@ form.addEventListener("submit", function(event)
         {
             if (ekstra[i].checked) 
             {
-                alleTilbud.push(ekstra[i].value);
-                allePriser.push(ekstraPris[i]);
+                alleTilbud.push(" " + ekstra[i].value);
+                allePriser.push(" " + ekstraPris[i]);
                 total += ekstraPris[i];
             }
         }
