@@ -64,6 +64,3 @@ form.addEventListener("submit", function(event)
     event.preventDefault();
 
 });
-
-//var PriceDiscountMonthly = parseInt(TotalPrice1 * DiscountMonthlyEl.value/100)
-//var PriceDiscountOneTime = parseInt(TotalPrice2 * DiscountEl.value/100)
